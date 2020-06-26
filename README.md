@@ -4,5 +4,7 @@
   </a>
 </p>
 <h2 align="center"> Mockups </h2>
-<img alt="Gatsby" src="src/images/mock2.jpg" />
-<img alt="Gatsby" src="src/images/mock1.png" />
+<div style="display: flex">
+  <img alt="Gatsby" src="src/images/mock2.jpg" width="300px" />
+  <img alt="Gatsby" src="src/images/mock1.png" width="300px" />
+</div> 
