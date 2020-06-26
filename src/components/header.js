@@ -1,42 +1,59 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import React, { useState } from "react"
+import { IoIosMenu, IoIosClose } from "react-icons/io"
+const Header = () => {
+  const [menu, setMenu] = useState(false)
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <header className={`header ${menu ? "menu-open" : "menu-closed"}`}>
+      <div className="logo-container container d-flex align-items-center">
+        <Link to="/">
+          <Img
+            className="logo"
+            fluid={data.placeholderImage.childImageSharp.fluid}
+          />
         </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+        <div className="navbar justify-content-around align-items-center mr-5 ml-5">
+          <Link to="/menu">Menü</Link>
+          <Link to="/hakkimizda">Hakkımızda</Link>
+        </div>
+        <div className="navbar-mobile menu-btn ">
+          {!menu ? (
+            <IoIosMenu
+              onClick={() => setMenu(true)}
+              size="40"
+              strokeWidth="5"
+            />
+          ) : (
+            <IoIosClose
+              onClick={() => setMenu(false)}
+              size="40"
+              strokeWidth="5"
+            />
+          )}
+        </div>
+      </div>
+      {menu ? (
+        <div className="navbar-mobile justify-content-around align-items-center mr-5 ml-5">
+          <Link to="/menu">Menü</Link>
+          <Link to="/hakkimizda">Hakkımızda</Link>
+        </div>
+      ) : (
+        <div />
+      )}
+    </header>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
 export default Header
