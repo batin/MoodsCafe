@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 import BackgroundSlider from "react-background-slider"
-import { BsInfoCircleFill } from "react-icons/bs"
 import { MdLocationOn, MdPhoneInTalk, MdMail } from "react-icons/md"
 
 const IndexPage = () => {
