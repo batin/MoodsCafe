@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,27 @@ import "../styles/index.scss"
 import { GrFormNext, GrFormPrevious } from "react-icons/gr"
 
 const Menu = () => {
+  let settings = {
+    dots: false,
+    infinite: true,
+    adaptiveHeight: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    nextArrow: <GrFormNext />,
+    prevArrow: <GrFormPrevious />,
+  }
+  useEffect(() => {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      settings.slidesToShow = 1
+      settings.slidesToScroll = 1
+      settings.dots = true
+    }
+  }, [])
+
   const data = useStaticQuery(graphql`
     query {
       menu1: file(relativePath: { eq: "1.jpg" }) {
@@ -76,24 +97,6 @@ const Menu = () => {
     }
   `)
 
-  let settings = {
-    dots: false,
-    infinite: true,
-    adaptiveHeight: true,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    nextArrow: <GrFormNext />,
-    prevArrow: <GrFormPrevious />,
-  }
-  if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    settings.slidesToShow = 1
-    settings.slidesToScroll = 1
-    settings.dots = true
-  }
   return (
     <Layout>
       <SEO title="Menü" />
