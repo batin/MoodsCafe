@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,7 +8,7 @@ import "../styles/index.scss"
 import { GrFormNext, GrFormPrevious } from "react-icons/gr"
 
 const Menu = () => {
-  let settings = {
+  const [settings, setSettings] = useState({
     dots: false,
     infinite: true,
     adaptiveHeight: true,
@@ -16,16 +16,17 @@ const Menu = () => {
     slidesToScroll: 2,
     nextArrow: <GrFormNext />,
     prevArrow: <GrFormPrevious />,
-  }
+  })
   useEffect(() => {
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     ) {
-      settings.slidesToShow = 1
-      settings.slidesToScroll = 1
-      settings.dots = true
+      setSettings({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      })
     }
   }, [])
 

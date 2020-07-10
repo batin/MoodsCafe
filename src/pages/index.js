@@ -81,11 +81,11 @@ const IndexPage = () => {
           <hr />
           <MdPhoneInTalk /> <a href="tel:+902582137643">0 (258) 213 76 43</a>
         </div>
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <hr />
           <MdMail />
           <a href="mailto:batineryilmaz@icloud.com">batineryilmaz@icloud.com</a>
-        </div>
+        </div> */}
       </div>
     </Layout>
   )

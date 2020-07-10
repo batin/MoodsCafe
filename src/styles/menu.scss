@@ -20,7 +20,7 @@
   .slider {
     width: 90vw;
     margin: auto;
-    margin-top: 10vh;
+    margin-top: 2vh;
     svg {
       display: none !important;
     }
@@ -28,5 +28,13 @@
   .slick-next,
   .slick-prev {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .slider {
+    width: 90vw;
+    margin: auto;
+    margin-top: 10vh;
   }
 }

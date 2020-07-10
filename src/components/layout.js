@@ -7,6 +7,16 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main>{children}</main>
+      <footer>
+        <a
+          className="creator"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://batin.netlify.app"
+        >
+          Batın Eryılmaz ©
+        </a>
+      </footer>
     </>
   )
 }
