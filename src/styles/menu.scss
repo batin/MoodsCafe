@@ -1,5 +1,32 @@
 .slider {
-  width: 90vw;
+  width: 65vw;
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 2vh;
+}
+.slick-next,
+.slick-prev {
+  height: 50px;
+  width: 50px;
+}
+.slick-next {
+  right: -40px;
+}
+
+.slick-prev {
+  left: -40px;
+}
+
+@media only screen and (max-width: 760px) {
+  .slider {
+    width: 90vw;
+    margin: auto;
+    margin-top: 10vh;
+    svg {
+      display: none !important;
+    }
+  }
+  .slick-next,
+  .slick-prev {
+    display: none;
+  }
 }

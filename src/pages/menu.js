@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import Slider from "react-slick"
 import "../styles/index.scss"
+import { GrFormNext, GrFormPrevious } from "react-icons/gr"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -75,13 +75,24 @@ const Menu = () => {
       }
     }
   `)
-  var settings = {
-    dots: true,
+
+  let settings = {
+    dots: false,
     infinite: true,
     adaptiveHeight: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    nextArrow: <GrFormNext />,
+    prevArrow: <GrFormPrevious />,
+  }
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    settings.slidesToShow = 1
+    settings.slidesToScroll = 1
+    settings.dots = true
   }
   return (
     <Layout>
