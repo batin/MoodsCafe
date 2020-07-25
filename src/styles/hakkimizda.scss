@@ -1,14 +1,14 @@
 .about {
   font-weight: 300;
-  background-image: url("../images/wide.png");
+  // background-image: url("../images/wide1.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 105vh;
   width: 100vw;
   position: absolute;
   left: 0px;
   color: transparent;
-  background-size: auto;
-  background-position: center center;
-  background-repeat: no-repeat;
   top: 0;
   z-index: -1;
   margin: 0;

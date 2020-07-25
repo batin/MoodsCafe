@@ -27,7 +27,7 @@
   }
   .slick-next,
   .slick-prev {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -37,4 +37,8 @@
     margin: auto;
     margin-top: 10vh;
   }
+}
+
+.menu-image {
+  width: 100%;
 }

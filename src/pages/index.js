@@ -13,14 +13,14 @@ const IndexPage = () => {
   }, [])
   const data = useStaticQuery(graphql`
     query {
-      mobile1: file(relativePath: { eq: "bg.png" }) {
+      mobile1: file(relativePath: { eq: "bg1.jpg" }) {
         childImageSharp {
           fluid {
             src
           }
         }
       }
-      mobile2: file(relativePath: { eq: "bg2.jpg" }) {
+      mobile2: file(relativePath: { eq: "bg2.png" }) {
         childImageSharp {
           fluid {
             src
@@ -34,7 +34,70 @@ const IndexPage = () => {
           }
         }
       }
-      mobile4: file(relativePath: { eq: "bg4.jpg" }) {
+      mobile4: file(relativePath: { eq: "bg4.jpeg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile5: file(relativePath: { eq: "bg5.png" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile6: file(relativePath: { eq: "bg6.png" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile7: file(relativePath: { eq: "bg7.jpeg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile8: file(relativePath: { eq: "bg8.jpeg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile9: file(relativePath: { eq: "bg9.jpeg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      mobile10: file(relativePath: { eq: "bg10.jpeg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      desktop1: file(relativePath: { eq: "wide1.jpg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      desktop2: file(relativePath: { eq: "wide2.jpg" }) {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      desktop3: file(relativePath: { eq: "wide3.jpg" }) {
         childImageSharp {
           fluid {
             src
@@ -44,27 +107,30 @@ const IndexPage = () => {
     }
   `)
 
-  const images = mobile
+  const images = 
+    mobile
     ? [
         data.mobile1.childImageSharp.fluid.src,
         data.mobile2.childImageSharp.fluid.src,
         data.mobile3.childImageSharp.fluid.src,
         data.mobile4.childImageSharp.fluid.src,
+        data.mobile5.childImageSharp.fluid.src,
+        data.mobile6.childImageSharp.fluid.src,
+        data.mobile7.childImageSharp.fluid.src,
+        data.mobile8.childImageSharp.fluid.src,
+        data.mobile9.childImageSharp.fluid.src,
+        data.mobile10.childImageSharp.fluid.src,
       ]
     : [
-        data.mobile1.childImageSharp.fluid.src,
-        data.mobile2.childImageSharp.fluid.src,
-        data.mobile3.childImageSharp.fluid.src,
-        data.mobile4.childImageSharp.fluid.src,
+        data.desktop1.childImageSharp.fluid.src,
+        data.desktop2.childImageSharp.fluid.src,
+        data.desktop3.childImageSharp.fluid.src
       ]
 
   return (
-    <Layout>
+    <Layout showFooter>
       <SEO title="Ana Sayfa" />
-      <BackgroundSlider images={images} duration={10} transition={1} />
-      {/* <div className="info">
-        <BsInfoCircleFill size="30" />
-      </div> */}
+      <BackgroundSlider images={images} duration={5} transition={1} />
       <div className="info-continer d-flex flex-column align-items-start justify-content-center">
         <div className="d-flex">
           <hr />
