@@ -134,13 +134,11 @@ const SecondPage = () => {
     <BackgroundSlider images={images} duration={5} transition={1} />
     <div className="about">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+          Moods 2003 yılında Serkan ERYILMAZ tarafından Denizli Çamlıkta siz değerli misafirlerine merhaba 
+          demiş ve “işletme eviniz gelen müsteriler ise misafirinizdir” mantalitesi ile günümüze hizmetini 
+          devam ettiren misafirlerine evinde samimiyeti ve sıcaklığını yaşatan lezzeti yiyecek ve içecekler 
+          sunan kendinizi özel hissedeceğiniz nezih bir buluşma noktası misafirlerin tabiri ile huzur buldukları
+          “Adsız bir klüptür”
       </p>
     </div>
     <div className="info-continer d-flex flex-column align-items-start justify-content-center">
