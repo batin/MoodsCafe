@@ -102,7 +102,6 @@ const Menu = () => {
     <Layout>
       <SEO title="Menü" />
       <Slider className="slider" {...settings}>
-        {console.log(data.menu1)}
         <div>
           <MenuItem imageUrl={data.menu1.childImageSharp.fluid.src} />
         </div>
