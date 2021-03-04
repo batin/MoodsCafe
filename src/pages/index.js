@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import "../styles/index.scss"
 import BackgroundSlider from "react-background-slider"
-import { MdLocationOn, MdPhoneInTalk, MdMail } from "react-icons/md"
+import { MdLocationOn, MdPhoneInTalk } from "react-icons/md"
 
 const IndexPage = () => {
   const [mobile, setMobile] = useState(false)
@@ -147,11 +147,6 @@ const IndexPage = () => {
           <hr />
           <MdPhoneInTalk /> <a href="tel:+902582137643">0 (258) 213 76 43</a>
         </div>
-        {/* <div className="d-flex">
-          <hr />
-          <MdMail />
-          <a href="mailto:batineryilmaz@icloud.com">batineryilmaz@icloud.com</a>
-        </div> */}
       </div>
     </Layout>
   )

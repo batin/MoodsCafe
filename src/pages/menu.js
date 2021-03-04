@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import Slider from "react-slick"
 import "../styles/index.scss"
 import { GrFormNext, GrFormPrevious } from "react-icons/gr"
+import MenuItem from "../components/MenuItem"
 
 const Menu = () => {
   const [settings, setSettings] = useState({
@@ -32,63 +32,63 @@ const Menu = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      menu1: file(relativePath: { eq: "1.jpg" }) {
+      menu1: file(relativePath: { eq: "Menu1.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu2: file(relativePath: { eq: "2.jpg" }) {
+      menu2: file(relativePath: { eq: "Menu2.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu3: file(relativePath: { eq: "3.jpg" }) {
+      menu3: file(relativePath: { eq: "Menu3.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu4: file(relativePath: { eq: "4.jpg" }) {
+      menu4: file(relativePath: { eq: "Menu4.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu5: file(relativePath: { eq: "5.jpg" }) {
+      menu5: file(relativePath: { eq: "Menu5.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu6: file(relativePath: { eq: "6.jpg" }) {
+      menu6: file(relativePath: { eq: "Menu6.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu7: file(relativePath: { eq: "7.jpg" }) {
+      menu7: file(relativePath: { eq: "Menu7.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu8: file(relativePath: { eq: "8.jpg" }) {
+      menu8: file(relativePath: { eq: "Menu8.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      menu9: file(relativePath: { eq: "9.jpg" }) {
+      menu9: file(relativePath: { eq: "Menu9.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -102,32 +102,33 @@ const Menu = () => {
     <Layout>
       <SEO title="Menü" />
       <Slider className="slider" {...settings}>
+        {console.log(data.menu1)}
         <div>
-          <Img fluid={data.menu1.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu1.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu2.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu2.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu3.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu3.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu4.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu4.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu5.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu5.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu6.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu6.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu7.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu7.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu8.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu8.childImageSharp.fluid.src} />
         </div>
         <div>
-          <Img fluid={data.menu9.childImageSharp.fluid} />
+          <MenuItem imageUrl={data.menu9.childImageSharp.fluid.src} />
         </div>
       </Slider>
     </Layout>
