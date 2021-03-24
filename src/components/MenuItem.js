@@ -1,20 +1,10 @@
-import React, { useCallback, useState } from 'react'
-import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
-import Img from "gatsby-image"
-import 'react-medium-image-zoom/dist/styles.css'
+import React from 'react'
+import InnerImageZoom from 'react-inner-image-zoom';
 
-const MyComponent = ({ imageUrl }) => {
-  const [isZoomed, setIsZoomed] = useState(false)
- 
-  const handleZoomChange = useCallback(shouldZoom => {
-    setIsZoomed(shouldZoom)
-  }, [])
- 
+const MenuItem = ({ imageUrl }) => {
   return (
-    <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange}>
-      <img className="menu-image" src={imageUrl} />
-    </ControlledZoom>
+    <InnerImageZoom className="menu-image" src={imageUrl} zoomSrc={imageUrl} />
   )
 }
- 
-export default MyComponent
+
+export default MenuItem
